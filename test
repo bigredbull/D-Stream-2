@@ -1,0 +1,26 @@
+grid_list={(1,2):{'tg':,'tn':,'class':,'status':'dense'},(2,2):{'tg':,'tn':,'class':,'status':'dense'}}
+cluster = {}
+def initial_clustering (grid_list):
+    update_grids(grid_list)
+    class_name = 1
+    for grid in grid_list :
+        if(grid['status'] == 'dense' ):
+            grid['class'] = class_name
+            cluster[class_name]= []
+            class_name++
+            
+        else :
+            grid['class']= 'NO_CLASS'
+    for c in cluster:
+        for g in cluster:
+            if(isoutside(g,c)):
+                for h in n_grid[g]:
+                    c1= 
+                    if (h[CLASS]!= "NO_CLASS"):
+                        c1= cluster[h['class']]
+                        if(len(c)> len(c1)):
+                            move(c1,c)
+                        else :
+                            move(c,c1)
+                    elif (get_density(g)== 'transitional'):
+                        h['class']= c
